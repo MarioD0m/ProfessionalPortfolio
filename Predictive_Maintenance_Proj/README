@@ -1,0 +1,61 @@
+# Predictive Maintenance & Yield Optimization in Maquiladora CNC Operations
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![XGBoost](https://img.shields.io/badge/XGBoost-1.7+-red.svg)
+![Tableau](https://img.shields.io/badge/Tableau-Dashboard-orange.svg)
+![Status](https://img.shields.io/badge/Status-Complete-green.svg)
+
+## 📌 Executive Summary
+In the high-volume manufacturing sectors of Northern Mexico (maquiladoras), unexpected CNC machine downtime causes severe supply chain bottlenecks and catastrophic tooling costs. This project transitions a theoretical manufacturing operation from **preventative maintenance** to **predictive maintenance**. 
+
+Using the AI4I 2020 telemetry dataset, I engineered a Python-based ETL pipeline and trained a hyperparameter-tuned **XGBoost Classifier** to predict machine failure. By optimizing strictly for the $F_1$-score and heavily penalizing false negatives, the final model successfully catches **80% of actual equipment failures** before they occur, visualized in an executive-ready Tableau command center.
+
+## 🏗️ System Architecture & Data Flow
+
+1. **Data Ingestion:** Raw CSV telemetry (10,000 cycles, 14 features).
+2. **Data Engineering (Python/Pandas):** Imputation, standardization, and feature engineering.
+3. **Machine Learning (Scikit-Learn/XGBoost):** GridSearchCV optimization, classification, and threshold tuning.
+4. **Presentation (Tableau):** Macro-to-micro dashboard for shop-floor supervisors.
+
+## 🔬 Phase 1: Data Engineering & Statistical Cleaning
+Raw industrial data is rarely clean. The `data_pipeline.py` script applies rigorous statistical methods to prepare the telemetry:
+* **Missing Values:** Handled via median imputation to prevent skewing from extreme, momentary sensor malfunctions.
+* **Outlier Handling:** Instead of dropping extreme thermal or kinematic outliers (which often indicate the failure itself), I utilized the Interquartile Range ($IQR$) to create Boolean `Flag` features:
+  $$Lower = Q_1 - 1.5 \times IQR$$
+  $$Upper = Q_3 + 1.5 \times IQR$$
+* **Feature Engineering:** Created `temp_difference_k` (Process Temp - Air Temp) to mathematically represent the machine's thermodynamic stress and inability to dissipate heat.
+
+## 🤖 Phase 2: Machine Learning & Hyperparameter Tuning
+Because equipment failure is inherently rare (only ~3% of the dataset), an algorithm optimizing for simple accuracy would fail in a real-world factory. 
+
+* **Algorithm:** `XGBClassifier` (Chosen for its ability to handle highly non-linear sensor boundaries).
+* **Class Imbalance Strategy:** Applied `scale_pos_weight` to aggressively penalize the model for missing a failure (False Negatives). In manufacturing, a false alarm (technician check) is vastly cheaper than a missed failure (broken spindle).
+* **Hyperparameter Tuning:** Executed 5-Fold Cross-Validation (`GridSearchCV`) to optimize tree depth, learning rate, and subsampling, preventing model overfitting.
+
+## 📊 Phase 3: Model Evaluation & Business Impact
+The model was evaluated on a 20% holdout test set, prioritizing the **$F_1$-score** and **Recall** for the minority class (Failures).
+
+* **Recall (Class 1): 0.80** (Successfully intercepted 80% of machine crashes).
+* **Overall Accuracy: 0.98**
+* **Feature Importance:** Kinematic variables drove the model's decision-making. `rotational_speed_rpm` and `torque_nm` accounted for roughly 60% of predictive power, validating the mechanical physics of the problem.
+
+## 📈 Phase 4: Tableau Command Center
+The model's outputs were serialized and connected to a Tableau dashboard designed for shift supervisors. 
+
+**[Insert Link or Screenshot of your Tableau Public Dashboard Here]**
+
+**Key Dashboard Features:**
+1. **The Kinematic Danger Zone:** A scatter plot (Speed vs. Torque) detailing the exact operational boundaries where failures cluster.
+2. **Maintenance Dispatch Queue:** A real-time, filtered table ranking active machines by their predicted `Failure_Probability`, allowing technicians to target at-risk spindles immediately.
+
+## ⚙️ Repository Navigation & Execution (Cloud Environment)
+This pipeline was developed, trained, and evaluated using **Google Colab** to leverage cloud-based compute resources. Data ingestion and model artifact storage were managed securely via **Google Drive**.
+
+To review or replicate this study:
+
+1. **Access the Environment:** Open the `Predictive_Maintenance_Pipeline.ipynb` notebook provided in this repository. You can launch it directly in your browser using Google Colab.
+2. **Configure Cloud Storage:** Download the raw telemetry dataset (`ai4i2020.csv`) and upload it to a designated directory in your Google Drive (e.g., `My Drive/Portfolio_Projects/Data/`).
+3. **Mount the Drive:** Execute the initialization cell in the notebook to mount your Google Drive to the Colab instance:
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
