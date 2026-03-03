@@ -1,10 +1,5 @@
 # Predictive Maintenance & Yield Optimization in Maquiladora CNC Operations
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![XGBoost](https://img.shields.io/badge/XGBoost-1.7+-red.svg)
-![Tableau](https://img.shields.io/badge/Tableau-Dashboard-orange.svg)
-![Status](https://img.shields.io/badge/Status-Complete-green.svg)
-
 ## 📌 Executive Summary
 In the high-volume manufacturing sectors of Northern Mexico (maquiladoras), unexpected CNC machine downtime causes severe supply chain bottlenecks and catastrophic tooling costs. This project transitions a theoretical manufacturing operation from **preventative maintenance** to **predictive maintenance**. 
 
