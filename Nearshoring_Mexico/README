@@ -1,0 +1,28 @@
+# Nearshoring Logistics & Supply Chain Risk Optimization
+
+## Executive Summary
+Engineered an end-to-end Machine Learning and Business Intelligence architecture to predict cross-border supply chain variance for Mexican nearshoring operations. By processing historical ERP data, I developed an **XGBoost regression model** that narrowed delivery uncertainty to a **± 1.02 Day window**. These insights were translated into an interactive Tableau dashboard, highlighting systemic logistics bottlenecks and protecting over $320,000 in high-risk corporate client revenue.
+
+## Business Problem
+As nearshoring manufacturing surges in Mexico, cross-border logistics face immense strain. Legacy "Scheduled Delivery" systems fail to account for real-world variance, resulting in missed SLAs, hidden financial risks in high-profit states (like California and Florida), and blind spots in freight mode efficiency.
+
+## Methodology & Tech Stack
+1. **Data Engineering (MySQL):** Architected relational databases, executed heavy data cleaning, and created robust Views to eliminate data leakage (preventing the model from seeing future actuals).
+2. **Machine Learning (Python/Scikit-Learn/XGBoost):** - Engineered temporal and financial features to capture logistics realities.
+   - Designed a highly resilient 80/20 Vault architecture for cross-validation.
+   - Executed Automated Hyperparameter Tuning (GridSearchCV) optimizing for row/column subsampling to prevent overfitting.
+   - Conducted an offline statistical A/B Test (Paired T-Test) comparing Random Forest vs. XGBoost, ultimately selecting XGBoost for its 80% faster computational ROI while maintaining an elite **1.28 RMSE** and **1.02 MAE**.
+3. **Business Intelligence (Tableau):** Designed an interactive, Z-pattern executive dashboard featuring a geospatial heatmap, an LOD-driven Financial Risk Matrix, and dynamic SLA bottleneck drill-downs.
+
+## Key Business Insights
+* **The Cross-Border Strain:** Feature importance extraction proved that US Customer Hubs (California, Florida, New Jersey) are the primary drivers of logistics variance, mathematically validating the cross-border strain of the nearshoring boom.
+* **The Root Cause:** 'Second Class' shipping is fundamentally broken on these routes, averaging nearly 2 days of delay.
+* **The AI Solution:** By replacing legacy schedules with the XGBoost inference model, the COO can dynamically update SLAs for high-value clients at checkout, eliminating blind spots.
+
+## Repository Structure
+* `/data/` - (Ignored) Raw datasets and SQL schemas.
+* `/notebooks/` - Jupyter/Colab notebooks containing EDA, Feature Engineering, and Model A/B Testing.
+* `/src/` - Modular `.py` scripts for production deployment (Data Preprocessing, Model Training, Automated Evaluation).
+* `dashboard_screenshot.png` - Visual proof of the BI layer.
+
+> **View the Interactive Tableau Dashboard Here:** [Insert Tableau Public Link Here]
