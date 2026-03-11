@@ -25,4 +25,4 @@ As nearshoring manufacturing surges in Mexico, cross-border logistics face immen
 * `/src/` - Modular `.py` scripts for production deployment (Data Preprocessing, Model Training, Automated Evaluation).
 * `dashboard_screenshot.png` - Visual proof of the BI layer.
 
-> **View the Interactive Tableau Dashboard Here:** [Insert Tableau Public Link Here]
+> **View the Interactive Tableau Dashboard Here:** [https://public.tableau.com/views/NearShoring_Dashboard/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
