@@ -7,12 +7,16 @@ Engineered an end-to-end Machine Learning and Business Intelligence architecture
 As nearshoring manufacturing surges in Mexico, cross-border logistics face immense strain. Legacy "Scheduled Delivery" systems fail to account for real-world variance, resulting in missed SLAs, hidden financial risks in high-profit states (like California and Florida), and blind spots in freight mode efficiency.
 
 ## Methodology & Tech Stack
-1. **Data Engineering (MySQL):** Architected relational databases, executed heavy data cleaning, and created robust Views to eliminate data leakage (preventing the model from seeing future actuals).
-2. **Machine Learning (Python/Scikit-Learn/XGBoost):** - Engineered temporal and financial features to capture logistics realities.
+1. **Data Engineering (MySQL):**
+### 1. Data Engineering (MySQL)
+   - Architected a relational database to process raw ERP logistics data. Built robust SQL Views to handle data cleaning and strictly prevent data leakage before the Machine Learning phase.
+2. **Machine Learning (Python/Scikit-Learn/XGBoost):** 
+   - Engineered temporal and financial features to capture logistics realities.
    - Designed a highly resilient 80/20 Vault architecture for cross-validation.
    - Executed Automated Hyperparameter Tuning (GridSearchCV) optimizing for row/column subsampling to prevent overfitting.
    - Conducted an offline statistical A/B Test (Paired T-Test) comparing Random Forest vs. XGBoost, ultimately selecting XGBoost for its 80% faster computational ROI while maintaining an elite **1.28 RMSE** and **1.02 MAE**.
-3. **Business Intelligence (Tableau):** Designed an interactive, Z-pattern executive dashboard featuring a geospatial heatmap, an LOD-driven Financial Risk Matrix, and dynamic SLA bottleneck drill-downs.
+3. **Business Intelligence (Tableau):** 
+   - Designed an interactive, Z-pattern executive dashboard featuring a geospatial heatmap, an LOD-driven Financial Risk Matrix, and dynamic SLA bottleneck drill-downs.
 
 ## Key Business Insights
 * **The Cross-Border Strain:** Feature importance extraction proved that US Customer Hubs (California, Florida, New Jersey) are the primary drivers of logistics variance, mathematically validating the cross-border strain of the nearshoring boom.
