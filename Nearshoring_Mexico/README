@@ -23,8 +23,8 @@ As nearshoring manufacturing surges in Mexico, cross-border logistics face immen
 * **The AI Solution:** By replacing legacy schedules with the XGBoost inference model, the COO can dynamically update SLAs for high-value clients at checkout, eliminating blind spots.
 
 ## Repository Structure
-* `/data/` - (Ignored) Raw datasets and SQL schemas.
-* `/notebooks/` - Jupyter/Colab notebooks containing EDA, Feature Engineering, and Model A/B Testing.
+* `/data/` - Raw datasets and SQL schemas.
+* `/notebooks/` - Google Colab notebooks containing EDA, Feature Engineering, Model A/B Testing and explanations.
 * `/src/` - Modular `.py` scripts for production deployment (Data Preprocessing, Model Training, Automated Evaluation).
 * `dashboard_screenshot.png` - Visual proof of the BI layer.
 
