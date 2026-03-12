@@ -8,7 +8,6 @@ As nearshoring manufacturing surges in Mexico, cross-border logistics face immen
 
 ## Methodology & Tech Stack
 1. **Data Engineering (MySQL):**
-### 1. Data Engineering (MySQL)
    - Architected a relational database to process raw ERP logistics data. Built robust SQL Views to handle data cleaning and strictly prevent data leakage before the Machine Learning phase.
 2. **Machine Learning (Python/Scikit-Learn/XGBoost):** 
    - Engineered temporal and financial features to capture logistics realities.
