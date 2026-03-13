@@ -1,4 +1,4 @@
-# Nearshoring Logistics & Supply Chain Risk Optimization
+# RouteZero: End-to-End ML Pipeline for Nearshore Logistics
 
 ## Executive Summary
 Engineered an end-to-end Machine Learning and Business Intelligence architecture to predict cross-border supply chain variance for Mexican nearshoring operations. By processing historical ERP data, I developed an **XGBoost regression model** that narrowed delivery uncertainty to a **± 1.02 Day window**. These insights were translated into an interactive Tableau dashboard, highlighting systemic logistics bottlenecks and protecting over $320,000 in high-risk corporate client revenue.
