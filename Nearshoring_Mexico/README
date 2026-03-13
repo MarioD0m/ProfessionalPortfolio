@@ -24,8 +24,9 @@ As nearshoring manufacturing surges in Mexico, cross-border logistics face immen
 
 ## Repository Structure
 * `/data/` - Raw datasets and SQL schemas.
-* `/notebooks/` - Google Colab notebooks containing EDA, Feature Engineering, Model A/B Testing and explanations.
 * `/src/` - Modular `.py` scripts for production deployment (Data Preprocessing, Model Training, Automated Evaluation).
-* `dashboard_screenshot.png` - Visual proof of the BI layer.
+* `NearShoring Dashboard 1.png` and `NearShoring Dashboard 2.png` - Visual proof of the BI layer.
+* `Schema_EER Diagram.png` - Visual proof of the SQL Schema.
+* `requirements.txt` - Description of the environment needed to run the scripts.
 
 > **View the Interactive Tableau Dashboard Here:** [https://public.tableau.com/views/NearShoring_Dashboard/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
