@@ -31,7 +31,7 @@ I don't just train models in notebooks; I build deployable software products tha
 
 ## 🚀 Featured Projects
 
-### 1. [Sentinel - SLA Breach Classification Engine (Risk Alert System)] (https://github.com/MarioD0m/ProfessionalPortfolio/tree/main/Predictive_Maintenance_Proj)
+### 1. [Sentinel - SLA Breach Classification Engine (Risk Alert System)](https://github.com/MarioD0m/ProfessionalPortfolio/tree/main/Predictive_Maintenance_Proj)
 * **Role:** Lead Engineer
 * **Description:** Binary triage system for warehouse managers to instantly flag potential SLA misses. Predict CNC machine failures in maquiladora operations to optimize tooling yield. 
 * **Highlights:** Architected an end-to-end Machine Learning pipeline capable of successfully intercepting 69% of simulated catastrophic tooling crashes. Achieved a highly deployable 0.70 F1-Score (0.70 Precision, 0.69 Recall) on unseen production data.
