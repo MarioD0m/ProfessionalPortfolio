@@ -27,12 +27,6 @@ def main():
     port = input(" --> Port: ")
     db_name = input(" --> Database Name: ")
     db_table = input(" --> Table Name: ")
-    #password = 'D3ndr06237.'
-    #username = 'root'
-    #db_name = 'nearshoring_logistic'
-    #host = 'localhost'
-    #port = '3306'
-    #db_table = 'ns_logistics_ml_training'
     db_info = f"mysql+pymysql://{username}:{password}@{host}:{port}/{db_name}"
     engine = create_engine(db_info)
     conn_ = check_db_connection(engine)
